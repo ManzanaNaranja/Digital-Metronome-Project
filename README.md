@@ -7,3 +7,15 @@ The circuit also displays the current bpm of the stepper motor metronome using a
 Arduino is only used for producing the tick sound with a buzzer. 
 
 **[Watch the Demo Video on YouTube](https://youtu.be/edP20gJBEIU)**
+
+## Hardware Diagram
+
+![hardware diagram](block%20diagram.png)
+
+## Software Flowchart
+
+![software flowchart](software%20flowchart.png)
+
+## Setup
+
+![setup](setup.png)
