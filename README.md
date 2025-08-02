@@ -19,3 +19,20 @@ Arduino is only used for producing the tick sound with a buzzer.
 ## Setup
 
 ![setup](setup.png)
+
+## High-Level Software Description
+
+### Timer Module
+The timer module is used to generate precise ticks for the metronome. It is configured with a **prescaler of 32** and a **21 MHz clock**, resulting in:
+Ticks per second = 21,000,000 / 32 = 656,250 ticks per second.+
+
+### Interrupts & Button Debouncing
+Interrupts are configured to react to falling edge button input. We implemented a software debounce by adding a delay in the IRQ handler after performing logic, but before clearing the interrupt flag. This solved the unstable, duplicate button presses problem. 
+
+### GPIO & LED Output
+GPIO was used to output to the led display with K64F to provide a visual cue.  
+
+### Arduino Communication & Buzzer Output
+An Arduino is used to generate a beep sound for each tick:
+- The K64F sends a digital high signal to an Arduino pin each tick.
+- The Arduino detects this signal and outputs a beep through a buzzer.
