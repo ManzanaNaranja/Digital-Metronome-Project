@@ -32,6 +32,31 @@ Interrupts are configured to react to falling edge button input. We implemented 
 ### GPIO & LED Output
 GPIO was used to output to the led display with K64F to provide a visual cue.  
 
+## Stepper Motor Control
+The FRDM-K64F microcontroller controls a stepper motor that rotates clockwise and counterclockwise using 2-phase-on, full-step mode.
+
+### Counterclockwise Step Sequence
+
+| Step | A1 | A2 | A3 | A4 |
+|------|----|----|----|----|
+| 0    |    | +  | +  |    |
+| 1    | +  |    | +  |    |
+| 2    | +  |    |    | +  |
+| 3    |    | +  |    | +  |
+
+---
+
+### Clockwise Step Sequence
+
+| Step | A1 | A2 | A3 | A4 |
+|------|----|----|----|----|
+| 0    |    | +  | +  |    |
+| 1    |    | +  |    | +  |
+| 2    | +  |    |    | +  |
+| 3    | +  |    | +  |    |
+
+Each "+" represents a high signal (logic 1) sent to the corresponding stepper motor input pin. The microcontroller cycles through these steps in the appropriate direction to rotate the motor in sync with the metronome tick.
+
 ### Arduino Communication & Buzzer Output
 An Arduino is used to generate a beep sound for each tick:
 - The K64F sends a digital high signal to an Arduino pin each tick.
