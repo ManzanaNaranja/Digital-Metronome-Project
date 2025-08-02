@@ -55,8 +55,6 @@ The FRDM-K64F microcontroller controls a stepper motor that rotates clockwise an
 | 2    | +  |    |    | +  |
 | 3    | +  |    | +  |    |
 
-Each "+" represents a high signal (logic 1) sent to the corresponding stepper motor input pin. The microcontroller cycles through these steps in the appropriate direction to rotate the motor in sync with the metronome tick.
-
 ### Arduino Communication & Buzzer Output
 An Arduino is used to generate a beep sound for each tick:
 - The K64F sends a digital high signal to an Arduino pin each tick.
