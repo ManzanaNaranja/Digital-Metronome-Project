@@ -24,7 +24,7 @@ Arduino is only used for producing the tick sound with a buzzer.
 
 ### Timer Module
 The timer module is used to generate precise ticks for the metronome. It is configured with a **prescaler of 32** and a **21 MHz clock**, resulting in:
-Ticks per second = 21,000,000 / 32 = 656,250 ticks per second.+
+Ticks per second = 21,000,000 / 32 = 656,250 ticks per second.
 
 ### Interrupts & Button Debouncing
 Interrupts are configured to react to falling edge button input. We implemented a software debounce by adding a delay in the IRQ handler after performing logic, but before clearing the interrupt flag. This solved the unstable, duplicate button presses problem. 
