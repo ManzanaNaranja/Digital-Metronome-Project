@@ -23,7 +23,7 @@ Arduino is only used for producing the tick sound with a buzzer.
 ## High-Level Software Description
 
 ### Timer Module
-The timer module is used to generate precise ticks for the metronome. It is configured with a **prescaler of 32** and a **21 MHz clock**, resulting in:
+The timer module is used to generate precise ticks for the metronome. It is configured with a prescaler of 32 and a 21 MHz clock, resulting in:
 Ticks per second = 21,000,000 / 32 = 656,250 ticks per second.
 
 ### Interrupts & Button Debouncing
